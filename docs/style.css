@@ -462,12 +462,18 @@ h1 {
 }
 
 .closing-section {
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding: 70px 28px 20px;
+}
 }
 
 .footer {
-  padding: 30px 24px 30px;
+  padding: 8px 24px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.footer {
+  padding: 8px 24px 20px;
   text-align: center;
   color: var(--muted);
   font-size: 0.95rem;

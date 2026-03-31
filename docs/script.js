@@ -33,7 +33,7 @@ function handleParallax() {
 
     const opacity = Math.max(
       0,
-      0.24 - Math.max(0, (scroll - fadeStart) / fadeRange) * 0.24
+      0.38 - Math.max(0, (scroll - fadeStart) / fadeRange) * 0.38
     );
 
     heroImage.style.opacity = opacity;
