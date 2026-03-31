@@ -437,10 +437,11 @@ h1 {
 
 .closing-section {
   padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .footer {
-  padding: 30px 24px 44px;
+  padding: 30px 24px 30px;
   text-align: center;
   color: var(--muted);
   font-size: 0.95rem;
