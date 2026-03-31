@@ -27,7 +27,7 @@ html {
   overflow: hidden;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.14;
 }
 
 .hero-image-parallax {
