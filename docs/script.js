@@ -1,9 +1,22 @@
 const bg = document.querySelector(".water-bg");
 const heroImage = document.querySelector(".hero-image-parallax");
+const revealItems = document.querySelectorAll(".reveal");
+
+function handleReveal() {
+  const trigger = window.innerHeight * 0.88;
+
+  revealItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+
+    if (rect.top < trigger) {
+      item.classList.add("visible");
+    }
+  });
+}
 
 function handleParallax() {
   const scroll = window.scrollY;
-  const stopPoint = window.innerHeight * 0.8;
+  const stopPoint = window.innerHeight * 0.82;
   const limitedScroll = Math.min(scroll, stopPoint);
 
   if (bg) {
@@ -12,19 +25,26 @@ function handleParallax() {
 
   if (heroImage) {
     const movement = limitedScroll * 0.24;
-    heroImage.style.transform = `translateY(${-(movement + 60)}px) scale(1.12)`;
+    heroImage.style.transform = `translateY(${-(movement + 110)}px) scale(1.22)`;
 
-    const fadeStart = stopPoint * 0.45;
-    const fadeRange = stopPoint * 0.55;
+    const fadeStart = stopPoint * 0.42;
+    const fadeRange = stopPoint * 0.58;
 
     const opacity = Math.max(
       0,
-      0.38 - Math.max(0, (scroll - fadeStart) / fadeRange) * 0.38
+      0.44 - Math.max(0, (scroll - fadeStart) / fadeRange) * 0.44
     );
 
     heroImage.style.opacity = opacity;
   }
 }
 
-window.addEventListener("scroll", handleParallax);
-window.addEventListener("load", handleParallax);
+function updateScene() {
+  handleReveal();
+  handleParallax();
+}
+
+window.addEventListener("scroll", updateScene);
+window.addEventListener("resize", updateScene);
+window.addEventListener("load", updateScene);
+document.addEventListener("DOMContentLoaded", updateScene);
