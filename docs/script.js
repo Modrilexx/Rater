@@ -1,18 +1,5 @@
 const bg = document.querySelector(".water-bg");
 const heroImage = document.querySelector(".hero-image-parallax");
-const revealItems = document.querySelectorAll(".reveal");
-
-function handleReveal() {
-  const trigger = window.innerHeight * 0.9;
-
-  revealItems.forEach((item) => {
-    const rect = item.getBoundingClientRect();
-
-    if (rect.top < trigger && rect.bottom > 0) {
-      item.classList.add("visible");
-    }
-  });
-}
 
 function handleParallax() {
   const scroll = window.scrollY;
@@ -39,12 +26,5 @@ function handleParallax() {
   }
 }
 
-function initMotion() {
-  handleReveal();
-  handleParallax();
-}
-
-window.addEventListener("scroll", initMotion);
-window.addEventListener("resize", initMotion);
-window.addEventListener("load", initMotion);
-document.addEventListener("DOMContentLoaded", initMotion);
+window.addEventListener("scroll", handleParallax);
+window.addEventListener("load", handleParallax);
