@@ -1,1 +1,1 @@
-console.log("RATER loaded.");
+console.log("RATER exhibition loaded.");
