@@ -2,18 +2,6 @@ const bg = document.querySelector(".water-bg");
 const heroImage = document.querySelector(".hero-image-parallax");
 const revealItems = document.querySelectorAll(".reveal");
 
-function handleReveal() {
-  const trigger = window.innerHeight * 0.88;
-
-  revealItems.forEach((item) => {
-    const rect = item.getBoundingClientRect();
-
-    if (rect.top < trigger) {
-      item.classList.add("visible");
-    }
-  });
-}
-
 function handleParallax() {
   const scroll = window.scrollY;
   const stopPoint = window.innerHeight * 0.82;
@@ -24,8 +12,8 @@ function handleParallax() {
   }
 
   if (heroImage) {
-    const movement = limitedScroll * 0.24;
-    heroImage.style.transform = `translateY(${-(movement + 110)}px) scale(1.22)`;
+    const movement = limitedScroll * 0.22;
+    heroImage.style.transform = `translateY(${-(movement + 120)}px) scale(1.22)`;
 
     const fadeStart = stopPoint * 0.42;
     const fadeRange = stopPoint * 0.58;
@@ -39,8 +27,23 @@ function handleParallax() {
   }
 }
 
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  {
+    threshold: 0.12,
+    rootMargin: "0px 0px -8% 0px",
+  }
+);
+
+revealItems.forEach((item) => observer.observe(item));
+
 function updateScene() {
-  handleReveal();
   handleParallax();
 }
 
