@@ -3,12 +3,13 @@ const heroImage = document.querySelector(".hero-image-parallax");
 const revealItems = document.querySelectorAll(".reveal");
 
 function handleReveal() {
-  const trigger = window.innerHeight * 0.88;
+  const trigger = window.innerHeight * 0.9;
 
   revealItems.forEach((item) => {
     const top = item.getBoundingClientRect().top;
+    const bottom = item.getBoundingClientRect().bottom;
 
-    if (top < trigger) {
+    if (top < trigger && bottom > 0) {
       item.classList.add("visible");
     }
   });
@@ -16,7 +17,6 @@ function handleReveal() {
 
 function handleParallax() {
   const scroll = window.scrollY;
-
   const stopPoint = window.innerHeight * 0.8;
   const limitedScroll = Math.min(scroll, stopPoint);
 
@@ -26,24 +26,29 @@ function handleParallax() {
 
   if (heroImage) {
     const movement = limitedScroll * 0.24;
-
     heroImage.style.transform = `translateY(${-(movement + 60)}px) scale(1.12)`;
 
-    const fadeStart = stopPoint * 0.35;
-    const fadeRange = stopPoint * 0.65;
+    const fadeStart = stopPoint * 0.45;
+    const fadeRange = stopPoint * 0.55;
 
     const opacity = Math.max(
       0,
-      0.18 - Math.max(0, (scroll - fadeStart) / fadeRange) * 0.18
+      0.24 - Math.max(0, (scroll - fadeStart) / fadeRange) * 0.24
     );
 
     heroImage.style.opacity = opacity;
   }
 }
 
-window.addEventListener("scroll", () => {
+function handleMotion() {
   handleParallax();
   handleReveal();
+}
+
+window.addEventListener("scroll", handleMotion);
+window.addEventListener("load", handleMotion);
+window.addEventListener("resize", handleMotion);
+document.addEventListener("DOMContentLoaded", handleMotion);
 });
 
 window.addEventListener("load", () => {
