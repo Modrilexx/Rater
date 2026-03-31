@@ -27,24 +27,21 @@ function handleParallax() {
   }
 }
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  {
-    threshold: 0.12,
-    rootMargin: "0px 0px -8% 0px",
-  }
-);
+function revealOnScroll() {
+  const trigger = window.innerHeight * 0.9;
 
-revealItems.forEach((item) => observer.observe(item));
+  revealItems.forEach((item) => {
+    const rect = item.getBoundingClientRect();
+
+    if (rect.top < trigger) {
+      item.classList.add("visible");
+    }
+  });
+}
 
 function updateScene() {
   handleParallax();
+  revealOnScroll();
 }
 
 window.addEventListener("scroll", updateScene);
