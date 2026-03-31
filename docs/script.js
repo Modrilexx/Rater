@@ -27,7 +27,7 @@ function handleParallax() {
   if (heroImage) {
     const movement = limitedScroll * 0.24;
 
-    heroImage.style.transform = `translateY(-${movement}px) scale(1.06)`;
+    heroImage.style.transform = `translateY(${-(movement + 60)}px) scale(1.12)`;
 
     const fadeStart = stopPoint * 0.35;
     const fadeRange = stopPoint * 0.65;
