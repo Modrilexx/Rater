@@ -6,10 +6,9 @@ function handleReveal() {
   const trigger = window.innerHeight * 0.9;
 
   revealItems.forEach((item) => {
-    const top = item.getBoundingClientRect().top;
-    const bottom = item.getBoundingClientRect().bottom;
+    const rect = item.getBoundingClientRect();
 
-    if (top < trigger && bottom > 0) {
+    if (rect.top < trigger && rect.bottom > 0) {
       item.classList.add("visible");
     }
   });
@@ -40,18 +39,12 @@ function handleParallax() {
   }
 }
 
-function handleMotion() {
-  handleParallax();
+function initMotion() {
   handleReveal();
+  handleParallax();
 }
 
-window.addEventListener("scroll", handleMotion);
-window.addEventListener("load", handleMotion);
-window.addEventListener("resize", handleMotion);
-document.addEventListener("DOMContentLoaded", handleMotion);
-});
-
-window.addEventListener("load", () => {
-  handleParallax();
-  handleReveal();
-});
+window.addEventListener("scroll", initMotion);
+window.addEventListener("resize", initMotion);
+window.addEventListener("load", initMotion);
+document.addEventListener("DOMContentLoaded", initMotion);
