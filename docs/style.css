@@ -27,7 +27,8 @@ html {
   overflow: hidden;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.38;
+}
 }
 
 .hero-image-parallax {
@@ -36,8 +37,9 @@ html {
   object-fit: cover;
   object-position: center 30%;
   transform: translateY(-60px) scale(1.12);
-  filter: blur(1.4px) saturate(0.95) contrast(1.04);
+  filter: blur(0.8px) saturate(1.08) contrast(1.08) brightness(0.96);
   transition: transform 0.08s linear;
+}
 }
 
 :root {
