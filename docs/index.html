@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RATER — Spec Driven Scrollytelling</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="water-bg"></div>
+
+  <div class="hero-image-wrap">
+    <img src="trophies.png" alt="Trophy background" class="hero-image-parallax" />
+  </div>
+
+  <div class="grain"></div>
+
+  <header class="hero" id="top">
+    <nav class="topbar">
+      <a class="logo" href="#top">RATER</a>
+      <div class="nav-links">
+        <a href="#thesis">Thesis</a>
+        <a href="#spec">Spec</a>
+        <a href="#exhibit">Exhibit</a>
+        <a href="#proof">Proof</a>
+      </div>
+    </nav>
+
+    <section class="hero-stage reveal">
+      <p class="eyebrow">Spec Driven Scrollytelling Project</p>
+      <h1>The architecture of judgment.</h1>
+      <p class="hero-subtext">
+        RATER is a Swiss-Apple inspired museum experience about taste, hierarchy,
+        perception, and the human need to assign value.
+      </p>
+
+      <div class="hero-actions">
+        <a class="hero-button" href="#thesis">Begin the story</a>
+        <a class="ghost-button" href="#spec">View the spec</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="thesis" class="scrolly-block">
+      <aside class="sticky-card">
+        <p class="section-label">01 / Core Thesis</p>
+        <h2>Every rating is a story pretending to be a number.</h2>
+        <p>
+          This page turns RATER from a normal portfolio site into a scroll-driven
+          argument. Each scene reveals one part of the system behind judgment.
+        </p>
+      </aside>
+
+      <div class="scene-stack">
+        <article class="scene-card reveal" data-step="01">
+          <span class="scene-kicker">Scene</span>
+          <h3>First, the visitor sees the object.</h3>
+          <p>
+            The trophy background establishes status, achievement, and comparison before
+            the page even explains itself.
+          </p>
+        </article>
+
+        <article class="scene-card reveal" data-step="02">
+          <span class="scene-kicker">Scene</span>
+          <h3>Then, the site questions the object.</h3>
+          <p>
+            A trophy is not just gold. It is a symbol that only matters because a culture
+            agrees to treat it as valuable.
+          </p>
+        </article>
+
+        <article class="scene-card reveal" data-step="03">
+          <span class="scene-kicker">Scene</span>
+          <h3>Finally, the viewer becomes part of the exhibit.</h3>
+          <p>
+            The act of scrolling mirrors the act of evaluating: slow attention, comparison,
+            selection, and judgment.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="spec" class="spec-band reveal">
+      <div class="section-inner">
+        <p class="section-label">02 / Spec Before Code</p>
+        <h2>Instead of asking AI to “make a site,” the project defines the system first.</h2>
+
+        <div class="spec-grid">
+          <div class="spec-card">
+            <span>Goal</span>
+            <p>Create a museum-like interface that explains how rankings shape perception.</p>
+          </div>
+          <div class="spec-card">
+            <span>Audience</span>
+            <p>People interested in design, media, culture, status, and rating systems.</p>
+          </div>
+          <div class="spec-card">
+            <span>Format</span>
+            <p>Scroll-based scenes, sticky panels, reveal cards, and controlled pacing.</p>
+          </div>
+          <div class="spec-card">
+            <span>Style</span>
+            <p>Swiss spacing, Apple restraint, glass panels, large type, and soft motion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="exhibit" class="scrolly-block reverse">
+      <aside class="sticky-card dark-card">
+        <p class="section-label">03 / Exhibition Logic</p>
+        <h2>The artifacts are not objects. They are ways of seeing.</h2>
+        <p>
+          Each card acts like a museum label. The visitor does not just read content;
+          they move through a sequence of concepts.
+        </p>
+
+        <div class="progress-dots" aria-hidden="true">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </aside>
+
+      <div class="scene-stack">
+        <article class="artifact reveal">
+          <div class="artifact-top">
+            <p class="artifact-id">Artifact I</p>
+            <div class="artifact-score">98</div>
+          </div>
+          <h3>The Ladder of Taste</h3>
+          <p>
+            How status and refinement become attached to aesthetic preference, making
+            “good taste” feel natural even when it is socially constructed.
+          </p>
+        </article>
+
+        <article class="artifact reveal">
+          <div class="artifact-top">
+            <p class="artifact-id">Artifact II</p>
+            <div class="artifact-score">93</div>
+          </div>
+          <h3>Consensus Machine</h3>
+          <p>
+            How averages, charts, and ratings become engines of legitimacy.
+            Numbers can feel neutral even when the system behind them is cultural.
+          </p>
+        </article>
+
+        <article class="artifact reveal">
+          <div class="artifact-top">
+            <p class="artifact-id">Artifact III</p>
+            <div class="artifact-score">89</div>
+          </div>
+          <h3>The Social Mirror</h3>
+          <p>
+            How public opinion bends private judgment before preference can fully form.
+          </p>
+        </article>
+
+        <article class="artifact reveal">
+          <div class="artifact-top">
+            <p class="artifact-id">Artifact IV</p>
+            <div class="artifact-score">95</div>
+          </div>
+          <h3>The Curated Self</h3>
+          <p>
+            How profiles, feeds, and digital identity become museum objects designed
+            for comparison and symbolic ranking.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote-section reveal">
+      <div class="quote-panel">
+        <p class="section-label">04 / Exhibition Thesis</p>
+        <blockquote>
+          “Every ranking system promises objectivity while quietly revealing the desires
+          of the culture that built it.”
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="proof" class="scrolly-block">
+      <aside class="sticky-card">
+        <p class="section-label">05 / Why This Is Scrollytelling</p>
+        <h2>The page does not dump information. It stages it.</h2>
+        <p>
+          The user scrolls through connected scenes: thesis, spec, artifacts,
+          quote, and reflection. The motion supports the argument instead of existing
+          only as decoration.
+        </p>
+      </aside>
+
+      <div class="scene-stack">
+        <article class="scene-card reveal" data-step="A">
+          <span class="scene-kicker">Structure</span>
+          <h3>Sticky context stays in place.</h3>
+          <p>The left panel anchors the concept while the right cards advance the story.</p>
+        </article>
+
+        <article class="scene-card reveal" data-step="B">
+          <span class="scene-kicker">Motion</span>
+          <h3>Reveals create pacing.</h3>
+          <p>Cards appear when the viewer reaches them, making each section feel intentional.</p>
+        </article>
+
+        <article class="scene-card reveal" data-step="C">
+          <span class="scene-kicker">Process</span>
+          <h3>The design follows a spec.</h3>
+          <p>The final site is controlled by a written plan instead of random AI output.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing-section reveal">
+      <div class="section-inner narrow">
+        <p class="section-label">06 / Final Reflection</p>
+        <h2>RATER is designed to be viewed, not merely used.</h2>
+        <p class="section-text">
+          This version keeps the original museum identity, trophy imagery, score language,
+          and clean visual system, but rebuilds the experience around scroll-based storytelling.
+        </p>
+        <p class="section-text">
+          The project shows how spec-driven development can guide AI toward a more advanced,
+          structured, and intentional interface.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>RATER — Spec Driven Scrollytelling Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
