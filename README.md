@@ -1,4 +1,21 @@
 # RATER — A Museum of Evaluation
+# RATER — Spec Driven Scrollytelling Project
+
+UPDATED 4/30/2026
+---------
+Live Site: https://Modrilexx.github.io/Rater/
+
+This project adapts my original RATER portfolio/site concept into a small spec-driven scrollytelling experience.
+
+The site uses:
+- a clear project spec before coding
+- scroll-based narrative sections
+- sticky panels
+- reveal animations
+- a consistent visual design system
+
+The goal was to test how spec-driven development can help guide AI-assisted web design and produce a more structured, intentional result.
+-------
 
 RATER is a conceptual web exhibition that explores how humans assign value.  
 Rather than functioning as a traditional product rating website, the project presents evaluation itself as a cultural artifact.
