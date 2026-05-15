@@ -5,6 +5,9 @@ UPDATED 4/30/2026
 ---------
 Live Site: https://Modrilexx.github.io/Rater/
 
+Youtube Presentation: https://youtu.be/YN5cIVlOa9Q?si=lXUsQwaoSOVak_vK
+
+_________
 This project adapts my original RATER portfolio/site concept into a small spec-driven scrollytelling experience.
 
 The site uses:
